@@ -1,0 +1,58 @@
+<div id="users " *ngIf="users$">
+  <h1>Output of the JSON File</h1>
+
+  <ul [@listStagger]>
+    <li *ngFor="let user of users$">
+      <ul>
+        <li>
+          <u>{{ user.title }}</u>
+        </li>
+        <li>
+          Id - {{ user.id }}
+        </li>
+        <li>
+          Title - {{ user.title }}
+        </li>
+        <li>
+          description - {{ user.description }}
+        </li>
+        <li>
+          beganAt - {{ user.beganAt }}
+        </li>
+        <li>
+          resolvedAt - {{ user.resolvedAt }}
+        </li>
+        <li>
+          status - {{ user.status }}
+        </li>
+        <li>
+          Updates -
+          <ul>
+            <li *ngFor="let userSub of user.updates">
+              <ul>
+                <li>
+                  Id - {{userSub.id}}
+                </li>
+                <li>
+                  By - {{userSub.by}}
+                </li>
+                <li>
+                  Avatar - {{userSub.avatar}}
+                </li>
+                <li>
+                  At - {{userSub.at}}
+                </li>
+                <li>
+                  Update - {{userSub.update}}
+                </li>
+              </ul>
+
+
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+    </li>
+  </ul>
+</div>
